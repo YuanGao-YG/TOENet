@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader
 import numpy as np
 import cv2
 import scipy.misc
-from TOENet import *
+from LYSNet import *
 from makedataset import Dataset
 import utils_train
 from Test_SSIM import *
@@ -27,7 +27,7 @@ def load_checkpoint(checkpoint_dir):
 	if os.path.exists(checkpoint_dir + 'checkpoint.pth.tar'):
 		model_info = torch.load(checkpoint_dir + 'checkpoint.pth.tar')
 		print('loading existing model ......', checkpoint_dir + 'checkpoint.pth.tar')
-		net = TOENet()
+		net = LYSNet()
 		device_ids = [0]
 		model = nn.DataParallel(net, device_ids=device_ids).cuda()
 		model.load_state_dict(model_info['state_dict'])
@@ -36,7 +36,7 @@ def load_checkpoint(checkpoint_dir):
 		cur_epoch = model_info['epoch']
 		
 	else:
-		net = TOENet()
+		net = LYSNet()
 		device_ids = [0]
 		model = nn.DataParallel(net, device_ids=device_ids).cuda()
 		optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
@@ -141,8 +141,9 @@ if __name__ == '__main__':
 	model,optimizer,cur_epoch = load_checkpoint(checkpoint_dir)
 
 	L2_loss = torch.nn.MSELoss(reduce=True, size_average=True).cuda()
+	color_loss = nn.CosineSimilarity(dim=1, eps=1e-6)
 	
-	for epoch in range(cur_epoch,200):
+	for epoch in range(cur_epoch,100):
 		optimizer = adjust_learning_rate(optimizer, epoch, lr_update_freq)
 		learnrate = optimizer.param_groups[-1]['lr']
 		model.train()
@@ -173,7 +174,7 @@ if __name__ == '__main__':
 
 			eout = model(input_var)
 
-			enloss = L2_loss(eout,target_final)
+			enloss = 0.8 * L2_loss(eout,target_final) + 0.2 * torch.mean(-1 * color_loss(eout,target_final))
 			optimizer.zero_grad()
 			#Doptimizer.zero_grad()
             
@@ -203,7 +204,7 @@ if __name__ == '__main__':
 			              
 				temp = np.concatenate((img_ccc,e_out), axis=1)			
 				cv2.imwrite(result_dir + '/' + testfiles[f][:-4] +'_%d_9'%(epoch)+'.png',np.clip(e_out*255,0.0,255.0))
-				cv2.imwrite('./MTRBNet/' + testfiles[f][:-4] +'_TOENet.png',np.clip(e_out*255,0.0,255.0))
+				cv2.imwrite('./MTRBNet/' + testfiles[f][:-4] +'_LYSNet.png',np.clip(e_out*255,0.0,255.0))
         
 		ps,ss =  C_PSNR_SSIM()
 
