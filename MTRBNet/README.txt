@@ -1,1 +1,0 @@
-After each training epoch, a test will be performed, and the test images will be saved here for the calculation of PSNR and SSIM.
