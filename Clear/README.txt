@@ -1,1 +1,0 @@
-Please put here the clear images that need to be tested during training.
