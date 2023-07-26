@@ -1,1 +1,0 @@
-The test results during the training stage will be saved here.
