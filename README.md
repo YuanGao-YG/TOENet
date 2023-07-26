@@ -1,4 +1,4 @@
-# <p align=center> [IEEE TIM] Let You See in Haze and Sandstorm: Two-in-One  Low-visibility Enhancement Network</p>
+# <p align=center> [IEEE TIM] Let You See in Haze and Sandstorm: Two-in-One Low-visibility Enhancement Network</p>
 
 <div align="center">
   
