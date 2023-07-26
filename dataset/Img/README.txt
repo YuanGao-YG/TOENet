@@ -1,1 +1,0 @@
-Please put the clear images for training here.
