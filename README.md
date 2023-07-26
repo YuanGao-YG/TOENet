@@ -43,10 +43,3 @@
   year={2023},
   publisher={IEEE}
 }
-```
-
-</div>
-<p align="center"> 
-  Visitor count<br>
-  <img src="https://profile-counter.glitch.me/gy65896_SCANet/count.svg" />
-</p>
