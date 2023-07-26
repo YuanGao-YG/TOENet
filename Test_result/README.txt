@@ -1,1 +1,0 @@
-The test results will be saved here.
