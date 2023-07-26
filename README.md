@@ -34,7 +34,7 @@
 ## Citation
 
 ```
-@inproceedings{guo2023scanet,
+@article{gao2023,
   title={Let You See in Haze and Sandstorm: Two-in-One Low-visibility Enhancement Network},
   author={Yuan Gao, Wenyu Xu, and Yuxu Lu},
   journal={IEEE Transactions on Instrumentation & Measurement},
