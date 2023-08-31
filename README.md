@@ -38,8 +38,8 @@
   title={Let You See in Haze and Sandstorm: Two-in-One Low-visibility Enhancement Network},
   author={Yuan Gao, Wenyu Xu, and Yuxu Lu},
   journal={IEEE Transactions on Instrumentation & Measurement},
-  volume={},
-  page={},
+  volume={72},
+  page={1-12},
   year={2023},
   publisher={IEEE}
 }
