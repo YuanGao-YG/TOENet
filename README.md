@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![paper](https://img.shields.io/badge/SCANet-paper-blue.svg)](https://ieeexplore.ieee.org/abstract/document/10216344)
+[![paper](https://img.shields.io/badge/TOENet-paper-blue.svg)](https://ieeexplore.ieee.org/abstract/document/10216344)
   
 
 
