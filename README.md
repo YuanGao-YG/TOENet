@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![paper](https://img.shields.io/badge/SCANet-paper-blue.svg)](https://openaccess.thecvf.com/content/CVPR2023W/NTIRE/html/Guo_SCANet_Self-Paced_Semi-Curricular_Attention_Network_for_Non-Homogeneous_Image_Dehazing_CVPRW_2023_paper.html)
+[![paper](https://img.shields.io/badge/SCANet-paper-blue.svg)](https://ieeexplore.ieee.org/abstract/document/10216344)
   
 
 
