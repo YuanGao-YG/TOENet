@@ -1,6 +1,8 @@
 # <p align=center> [IEEE TIM] Let You See in Haze and Sandstorm: Two-in-One Low-visibility Enhancement Network</p>
 
 <div align="center">
+
+[![paper](https://img.shields.io/badge/paper-blue.svg)]([https://openaccess.thecvf.com/content/CVPR2023W/NTIRE/html/Guo_SCANet_Self-Paced_Semi-Curricular_Attention_Network_for_Non-Homogeneous_Image_Dehazing_CVPRW_2023_paper.html](https://doi.org/10.1109/TIM.2023.3304668))
   
 
 
