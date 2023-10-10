@@ -45,10 +45,10 @@ class MainNetworkStructure(nn.Module):
 		self.conv_r_emtes = nn.Conv2d(2*channel,4*channel,kernel_size=1,stride=1,padding=0,bias=False) 
         
 		self.conv_g_eltem = nn.Conv2d(channel,2*channel,kernel_size=1,stride=1,padding=0,bias=False)   
-		self.conv_g_emtes = nn.Conv2d(2*channel,4*channel,kernel_size=1,stride=1,padding=0,bias=False) 
+		#self.conv_g_emtes = nn.Conv2d(2*channel,4*channel,kernel_size=1,stride=1,padding=0,bias=False)
         
 		self.conv_b_eltem = nn.Conv2d(channel,2*channel,kernel_size=1,stride=1,padding=0,bias=False)   
-		self.conv_b_emtes = nn.Conv2d(2*channel,4*channel,kernel_size=1,stride=1,padding=0,bias=False) 
+		#self.conv_b_emtes = nn.Conv2d(2*channel,4*channel,kernel_size=1,stride=1,padding=0,bias=False)
         
 		self.conv_dstdm = nn.Conv2d(4*channel,2*channel,kernel_size=1,stride=1,padding=0,bias=False)   
 		self.conv_dmtdl = nn.Conv2d(2*channel,channel,kernel_size=1,stride=1,padding=0,bias=False)  
@@ -130,7 +130,7 @@ class BRB(nn.Module):
 
 		self.conv_1 = nn.Conv2d(channel,channel,kernel_size=3,stride=1,padding=1,bias=False)
 		self.conv_2 = nn.Conv2d(channel,channel,kernel_size=3,stride=1,padding=1,bias=False)
-		self.conv_3 = nn.Conv2d(channel,channel,kernel_size=3,stride=1,padding=1,bias=False)
+		#self.conv_3 = nn.Conv2d(channel,channel,kernel_size=3,stride=1,padding=1,bias=False)
         
 		self.conv_out = nn.Conv2d(channel,channel,kernel_size=3,stride=1,padding=1,bias=False)
         
@@ -157,11 +157,9 @@ class CAB(nn.Module):
         self.fc1 = nn.Conv2d(in_planes , in_planes // ration , 1 , bias = False)
         self.act1 = nn.PReLU(in_planes // ration)
         self.fc2 = nn.Conv2d(in_planes // ration , in_planes , 1 , bias = False)
-        self.act2 = nn.PReLU(in_planes)
         self.sigmoid = nn.Sigmoid()
         self.norm1 = nn.GroupNorm(num_channels=in_planes // ration,num_groups=1)
         self.norm2 = nn.GroupNorm(num_channels=in_planes,num_groups=1)
-        self.fout = nn.Conv2d(in_planes , in_planes//2, 1 , bias = False)
         
     def forward(self , x):
         avg_out = self.norm2(self.fc2(self.act1(self.norm1(self.fc1(self.avg_pool(x))))))
