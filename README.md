@@ -31,7 +31,7 @@
 * Place test low-visibility images in the `input` folder.
 * Modify the weight name in the `test.py`.<br>
 * Run `test.py`
-* The results is saved in `output` folder.
+* The results are saved in `output` folder.
 
 ## Citation
 
