@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='TOENet',
+    name='toenet',
     version='0.1',
     url='https://github.com/YuanGao-YG/TOENet',
     author='Yuan Gao',
