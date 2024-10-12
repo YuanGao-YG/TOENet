@@ -47,4 +47,4 @@
 }
 ```
 
-#### If you have any questions, please get in touch with me (yuangao24@mails.tsinghua.edu.cn).
+#### If you have any questions, please contact (yuangao24@mails.tsinghua.edu.cn).
